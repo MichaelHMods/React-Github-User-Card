@@ -3,12 +3,13 @@ import React from 'react';
 import axios from 'axios';
 
 import DataCard from './DataCard';
+import PeonDataCard from './PeonDataCard';
 
 class FetchData extends React.Component{
     state = {
         userName: '',
         gitHandle: '',
-        followers: ''
+        followers: [{}]
     };
 
 
@@ -23,28 +24,28 @@ componentDidMount() {
                 gitHandle: res.data.login,
                 //followers: 
             });
-        })
+        },[])
         .catch(err => console.log(err))
-};
 
-componentDidUpdate {
+
+
     axios
-    .get('https://api.github.com/users/MichaelHMods')
+    .get('https://api.github.com/users/MichaelHMods/followers')
     .then(res => {
-        console.log('this is res', res)
+        console.log('this is 2nd axios ', res.data)
         this.setState({
-            userName: res.data.name,
-            gitHandle: res.data.login,
-            //followers: 
+        followers: res.data
         });
-    })
+    },[])
     .catch(err => console.log(err))
-    }
+};
+    
 
 render() {
     return(
         <div className="container">
             <DataCard userName={this.state.userName} gitHandle={this.state.gitHandle} />
+            {this.state.followers.map((item, i) => <PeonDataCard item={item} key={i}/>)}
         </div>
 
     )
