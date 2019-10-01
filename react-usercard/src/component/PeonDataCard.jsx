@@ -11,7 +11,7 @@ function PeonDataCard(props) {
             <div className="peonCardImg">
                 <img src={props.item.avatar_url} alt=""/>
             </div>
-            <h1></h1>
+            
             <h4>Github Handle: {props.item.login} </h4>
         
        </div>

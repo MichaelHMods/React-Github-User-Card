@@ -9,6 +9,7 @@ class FetchData extends React.Component{
     state = {
         userName: '',
         gitHandle: '',
+        img:'',
         followers: [{}]
     };
 
@@ -22,6 +23,7 @@ componentDidMount() {
             this.setState({
                 userName: res.data.name,
                 gitHandle: res.data.login,
+                img: res.data.avatar_url,
                 //followers: 
             });
         },[])
@@ -44,7 +46,7 @@ componentDidMount() {
 render() {
     return(
         <div className="container">
-            <DataCard userName={this.state.userName} gitHandle={this.state.gitHandle} />
+            <DataCard userName={this.state.userName} gitHandle={this.state.gitHandle} img={this.state.img} />
             {this.state.followers.map((item, i) => <PeonDataCard item={item} key={i}/>)}
         </div>
 
