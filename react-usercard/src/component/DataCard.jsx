@@ -1,19 +1,23 @@
 import React from 'react';
 
+//styles
+import { DCImg, MainDC, TextDC } from '../styles';
+
 
 
 function DataCard(props) {
     console.log('this is props',props);
     return(
     <>
-    <div className="mainCard">
+    <MainDC>
         <div className="dCImg">
-            <img src={props.img} alt={props.userName} className="dataCardImg"/>
+            <DCImg src={props.img} alt={props.userName} className="dataCardImg"/>
         </div>
-        <h1>{props.userName} </h1>
-
-        <h4>GitHub: {props.gitHandle} </h4>
-    </div>
+        <TextDC>
+            <h1>{props.userName} </h1>
+            <h4>GitHub: {props.gitHandle} </h4>
+        </TextDC>
+    </MainDC>
     </>
     )
 }

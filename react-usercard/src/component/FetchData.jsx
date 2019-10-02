@@ -5,6 +5,9 @@ import axios from 'axios';
 import DataCard from './DataCard';
 import PeonDataCard from './PeonDataCard';
 
+// styles
+import {PCard} from '../styles';
+
 class FetchData extends React.Component{
     state = {
         userName: '',
@@ -47,7 +50,9 @@ render() {
     return(
         <div className="container">
             <DataCard userName={this.state.userName} gitHandle={this.state.gitHandle} img={this.state.img} />
+            <PCard>
             {this.state.followers.map((item, i) => <PeonDataCard item={item} key={i}/>)}
+            </PCard>
         </div>
 
     )

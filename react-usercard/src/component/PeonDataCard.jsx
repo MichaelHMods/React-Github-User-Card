@@ -1,4 +1,5 @@
 import React from 'react';
+import { PCContainer, PCImg } from '../../src/styles';
 
 
 
@@ -6,22 +7,22 @@ function PeonDataCard(props) {
     console.log('PeonCard props',props);
     return(
   
-    <div className="peonCard">
-       <div className="peonCardContainer">
+    
+       <PCContainer>
             <div className="peonCardImg">
-                <img src={props.item.avatar_url} alt=""/>
+                <PCImg src={props.item.avatar_url} alt={props.item.login}  />
             </div>
             
             <h4>Github Handle: {props.item.login} </h4>
         
-       </div>
+       </PCContainer>
         
     
     
         
 
         
-    </div>
+    
     )
 }
 
