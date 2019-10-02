@@ -2,10 +2,12 @@ import React from 'react';
 
 import './App.css';
 import FetchData from './component/FetchData';
+//styled
+import {App as Styled} from './styles';
 
 function App() {
   return (
-    <div className="App">
+    <Styled>
       {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -21,7 +23,7 @@ function App() {
         </a>
       </header> */}
       <FetchData/>
-    </div>
+    </Styled>
   );
 }
 
